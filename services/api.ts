@@ -1,7 +1,5 @@
-// services/api.ts
-import { API_BASE_URL } from "@env";
-
-const BASE_URL = API_BASE_URL ?? "http://localhost:3000/api";
+const BASE_URL =
+  process.env.EXPO_PUBLIC_API_BASE_URL ?? "http://localhost:3000/api";
 
 export type TrafficRecord = {
   id: number;
@@ -10,18 +8,14 @@ export type TrafficRecord = {
   gym_id: number;
 };
 
-export async function getLatestTraffic(gymId: number): Promise<TrafficRecord> {
+export async function getLatestTraffic(
+  gymId: number
+): Promise<TrafficRecord | null> {
   const res = await fetch(`${BASE_URL}/traffic/latest/gym/${gymId}`);
-
   if (!res.ok) {
-    console.error(
-      "Failed to fetch latest traffic:",
-      res.status,
-      res.statusText
-    );
+    console.error("Failed to fetch latest traffic", res.status, res.statusText);
     throw new Error("Failed to fetch latest traffic");
   }
-  console.log(res.json());
   return res.json();
 }
 
