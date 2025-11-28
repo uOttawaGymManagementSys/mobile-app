@@ -19,8 +19,12 @@ export default function Index() {
 
   return (
     <View className="flex-1 bg-primary px-6 pt-12">
-      <Text className="text-white text-3xl font-bold mt-8">Gym Insights</Text>
-      <Text className="text-white/80 mt-4 font-semibold">Select a gym</Text>
+      <Text className="text-white text-3xl font-bold mt-8">
+        Fitness Centres Insights
+      </Text>
+      <Text className="text-white/80 mt-4 font-semibold">
+        Select a fitness centre
+      </Text>
 
       <View className="mt-20 gap-4">
         {/* Minto */}
