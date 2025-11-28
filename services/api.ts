@@ -32,7 +32,6 @@ export async function getMachineStatuses(
   gymId: number
 ): Promise<MachineStatus[]> {
   const res = await fetch(`${BASE_URL}/machinestatus/gym/${gymId}`);
-
   if (!res.ok) {
     console.error(
       "Failed to fetch machine statuses:",
@@ -41,6 +40,5 @@ export async function getMachineStatuses(
     );
     throw new Error("Failed to fetch machine statuses");
   }
-  console.log(res.json());
-  return res.json();
+  return res.json(); // safe: called only once
 }

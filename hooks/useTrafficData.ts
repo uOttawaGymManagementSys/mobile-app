@@ -1,4 +1,3 @@
-// hooks/useTrafficData.ts
 import { getLatestTraffic, TrafficRecord } from "@/services/api";
 import { useEffect, useState } from "react";
 
@@ -30,7 +29,7 @@ export function useTrafficData(gymId: number | null) {
     };
 
     fetchTraffic();
-    const intervalId = setInterval(fetchTraffic, 30000); //fetch every 30 000ms -> 30s
+    const intervalId = setInterval(fetchTraffic, 15000); //This creates an automatic loop that runs fetch every 30 000ms -> 30s
 
     return () => {
       isActive = false;
