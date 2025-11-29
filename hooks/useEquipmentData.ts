@@ -31,8 +31,11 @@ export function useEquipmentData(gymId: number | null) {
     // initial fetch
     fetchEquipment();
 
-    // polling every 90s
-    const intervalId = setInterval(fetchEquipment, 15000);
+    // polling every 30s
+    const intervalMs =
+      Number(process.env.EXPO_PUBLIC_TRAFFIC_INTERVAL_MS) || 30000;
+
+    const intervalId = setInterval(fetchEquipment, intervalMs);
 
     return () => {
       isActive = false;
