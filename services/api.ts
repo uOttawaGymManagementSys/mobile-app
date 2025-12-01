@@ -1,6 +1,7 @@
 const BASE_URL =
   process.env.EXPO_PUBLIC_API_BASE_URL ?? "http://localhost:3000/api";
 
+console.log(BASE_URL);
 export type TrafficRecord = {
   id: number;
   recorded_at: string; // ISO timestamp from backend
