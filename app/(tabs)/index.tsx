@@ -1,6 +1,7 @@
+import icon from "@/assets/images/icon.png";
 import { useGym } from "@/context/GymContext";
 import { router } from "expo-router";
-import { Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 
 export default function Index() {
   const { setSelectedGymId } = useGym();
@@ -58,6 +59,17 @@ export default function Index() {
             </Text>
           )}
         </Pressable>
+        {/* Company Icon */}
+        <View className="mt-[+105] w-full flex items-center justify-center">
+          <Image
+            source={icon}
+            className="w-[150] h-[150] opacity-100"
+            resizeMode="contain"
+          />
+          <Text className="text-white/60 text-sm mt-3">
+            University of Ottawa
+          </Text>
+        </View>
       </View>
     </View>
   );
