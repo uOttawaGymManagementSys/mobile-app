@@ -31,9 +31,9 @@ export function useEquipmentData(gymId: number | null) {
     // initial fetch
     fetchEquipment();
 
-    // polling every 30s
-    const intervalMs =
-      Number(process.env.EXPO_PUBLIC_EQUIPMENT_INTERVAL_MS) || 30000;
+    // polling every 60s
+    const intervalMs = 1000;
+    //      Number(process.env.EXPO_PUBLIC_EQUIPMENT_INTERVAL_MS) || 60000;
 
     const intervalId = setInterval(fetchEquipment, intervalMs);
 

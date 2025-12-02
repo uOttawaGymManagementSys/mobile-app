@@ -30,9 +30,9 @@ export function useTrafficData(gymId: number | null) {
 
     fetchTraffic();
 
-    //polling every 60s
-    const intervalMs =
-      Number(process.env.EXPO_PUBLIC_EQUIPMENT_INTERVAL_MS) || 60000;
+    //polling every 30s
+    const intervalMs = 1000; // for demo use
+    //      Number(process.env.EXPO_PUBLIC_TRAFFIC_INTERVAL_MS) || 30000;
 
     const intervalId = setInterval(fetchTraffic, 1000); //This creates an automatic loop that runs fetch every 30 000ms -> 30s
 
